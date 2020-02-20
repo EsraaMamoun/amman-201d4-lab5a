@@ -87,9 +87,12 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+var sArray1 = sum(testArray[0],testArray[1])[0];
+var sArray2 = sum(sArray1,testArray[2])[0];
+var message5 = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sArray2} is their sum.`
+return [sArray2,message5];
 }
-
+testSumArray();
 // Here is the test for sumArray(); uncomment it to run it
 
 // testSumArray(testArray);
