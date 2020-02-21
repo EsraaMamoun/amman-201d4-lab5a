@@ -9,7 +9,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-    var theSum = a+b;
+    var theSum = a + b;
     // 'The sum of 4 and 7 is 11.'
     var message = `The sum of ${a} and ${b} is ${theSum}.`;
     return [theSum, message];
@@ -31,10 +31,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-   var theMultiply = a*b;
+    var theMultiply = a * b;
 
-   var message2 = `The product of ${a} and ${b} is ${theMultiply}.`;
-   return [theMultiply, message2];
+    var message2 = `The product of ${a} and ${b} is ${theMultiply}.`;
+    return [theMultiply, message2];
 }
 testMultiply();
 
@@ -56,15 +56,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-var sum1 = sum(a,b)[0];
-var sum2 = sum(sum1,c)[0];
+    var sum1 = sum(a, b)[0];
+    var sum2 = sum(sum1, c)[0];
 
-var multi1 = multiply(a,b)[0];
-var multi2 = multiply(multi1,c)[0];
+    var multi1 = multiply(a, b)[0];
+    var multi2 = multiply(multi1, c)[0];
 
-var message3 = `${a} and ${b} and ${c} sum to ${sum2}.`;
-var message4 = `The product of ${a} and ${b} and ${c} is ${multi2}.`;
-return [sum2, multi2, message3, message4];
+    var message3 = `${a} and ${b} and ${c} sum to ${sum2}.`;
+    var message4 = `The product of ${a} and ${b} and ${c} is ${multi2}.`;
+    return [sum2, multi2, message3, message4];
 }
 testSumAndMultiply();
 
@@ -87,10 +87,10 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-var sArray1 = sum(testArray[0],testArray[1])[0];
-var sArray2 = sum(sArray1,testArray[2])[0];
-var message5 = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sArray2} is their sum.`
-return [sArray2,message5];
+    var sArray1 = sum(testArray[0], testArray[1])[0];
+    var sArray2 = sum(sArray1, testArray[2])[0];
+    var message5 = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sArray2} is their sum.`;
+    return [sArray2, message5];
 }
 testSumArray();
 // Here is the test for sumArray(); uncomment it to run it
@@ -111,10 +111,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-var multiArray1 = multiply(testArray[0],testArray[1])[0];
-var multiArray2 = multiply(multiArray1,testArray[2])[0];
-var message6 = `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${multiArray2}.`;
-return [multiArray2,message6];
+    var multiArray1 = multiply(testArray[0], testArray[1])[0];
+    var multiArray2 = multiply(multiArray1, testArray[2])[0];
+    var message6 = `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${multiArray2}.`;
+    return [multiArray2, message6];
 }
 testMultiplyArray();
 
@@ -140,11 +140,20 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    var multi3 = 1;
+    for (var i = 0; i < testDynamicArray.length; i++) {
+        multi3 = multiply(multi3, testDynamicArray[i])[0];
+    }
+    var message7 = `The numbers ${testDynamicArray[0]},${testDynamicArray[1]},${testDynamicArray[2]},${testDynamicArray[3]},${testDynamicArray[4]} have a product of ${multi3}.`;
 
+    return [multi3, message7];
 }
+testMultiplyAnyArray();
+
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
